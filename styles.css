@@ -1,0 +1,98 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5F7F8;
+    margin: 0;
+    color: #45474B;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #495E57;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+}
+
+.navbar a:hover {
+    background-color: #F4CE14;
+    color: black;
+}
+
+.navbar .active {
+    font-weight: bold;
+    background-color: #F4CE14;
+}
+
+.calculator-section {
+    padding: 7px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+#form-container {
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+}
+
+.column label, .column select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+table {
+    align-self: center;
+    align-items: center ;
+    width: 40%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #495E57;
+    color: white;
+}
+
+button {
+    background-color: #EEF7FF;
+    margin: 1rem;
+    padding: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}  

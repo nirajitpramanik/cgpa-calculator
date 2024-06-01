@@ -1,0 +1,9 @@
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar a {
+        text-align: left;
+        padding: 10px;
+    }
+}
