@@ -1,90 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPA Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="navbar" id="navbar">
-        <a href="#gpa-calculator" class="active" onclick="toggleSection('gpa')">GPA Calculator</a>
-        <a href="#cgpa-calculator" onclick="toggleSection('cgpa')">CGPA Calculator</a>
-    </div>
-    
-    <div id="gpa-calculator" class="calculator-section">
-        <center>
-            <form id="gpa-form">
-                <table id="grades-table">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody id="form-body"></tbody>
-                </table>
-                <button id="gpa-submit-button" type="submit">Calculate GPA</button>
-            </form>
-        </center>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A CGPA and GPA calculator designed specifically for VIT University. The credits need not be memorised anymore, only courses work!">
+        <meta name="author" content="Nirajit Pramanik">
+        <meta name="keywords" content="GPA, CGPA, VIT, GPA Calculator">
+        <title>
+            VIT GPA Calculator
+        </title>
+        <link rel="stylesheet" href="styles.css">
 
-    <div id="cgpa-calculator" class="calculator-section" style="display: none;">
-        <center>
-            <form id="cgpa-form">
-                <table id="cgpa-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Past Semester Credits</td>
-                            <td><input type="number" step="0.01" id="past-sem-credits" name="past-sem-credits" required></td>
-                        </tr>
-                        <tr>
-                            <td>Past Semester GPA</td>
-                            <td><input type="number" step="0.01" id="past-sem-gpa" name="past-sem-gpa" required></td>
-                        </tr>
-                        <tr>
-                            <td>Current Semester Credits</td>
-                            <td><input type="number" step="0.01" id="current-sem-credits" name="current-sem-credits" required></td>
-                        </tr>
-                        <tr>
-                            <td>Current Semester GPA</td>
-                            <td><input type="number" step="0.01" id="current-sem-gpa" name="current-sem-gpa" required></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button id="cgpa-submit-button" type="submit">Calculate CGPA</button>
-            </form>
-        </center>
-    </div>
-    
-    <script src="scripts.js"></script>
-    <script>
-        function toggleSection(section) {
-            const gpa_section = document.getElementById('gpa-calculator');
-            const cgpa_section = document.getElementById('cgpa-calculator');
-            const gpa_link = document.querySelector('.navbar a[href="#gpa-calculator"]');
-            const cgpa_link = document.querySelector('.navbar a[href="#cgpa-calculator"]');
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0V9YZTM38T"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-            if (section === 'gpa') {
-                gpa_section.style.display = 'block';
-                cgpa_section.style.display = 'none';
-                gpa_link.classList.add('active');
-                cgpa_link.classList.remove('active');
-            } else {
-                gpa_section.style.display = 'none';
-                cgpa_section.style.display = 'block';
-                gpa_link.classList.remove('active');
-                cgpa_link.classList.add('active');
+            gtag('config', 'G-0V9YZTM38T');
+        </script>
+    </head>
+
+    <body>
+        <div class="navbar" id="navbar">
+            <a href="#gpa-calculator" class="active" onclick="toggleSection('gpa')">GPA Calculator</a>
+            <a href="#cgpa-calculator" onclick="toggleSection('cgpa')">CGPA Calculator</a>
+        </div>
+        
+        <div id="gpa-calculator" class="calculator-section">
+            <center>
+                <form id="gpa-form">
+                    <table id="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="form-body"></tbody>
+                    </table>
+                    <button id="gpa-submit-button" type="submit">Calculate GPA</button>
+                </form>
+            </center>
+        </div>
+
+        <div id="cgpa-calculator" class="calculator-section" style="display: none;">
+            <center>
+                <form id="cgpa-form">
+                    <table id="cgpa-table">
+                        <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Past Semester Credits</td>
+                                <td><input type="number" step="0.01" id="past-sem-credits" name="past-sem-credits" required></td>
+                            </tr>
+                            <tr>
+                                <td>Past Semester GPA</td>
+                                <td><input type="number" step="0.01" id="past-sem-gpa" name="past-sem-gpa" required></td>
+                            </tr>
+                            <tr>
+                                <td>Current Semester Credits</td>
+                                <td><input type="number" step="0.01" id="current-sem-credits" name="current-sem-credits" required></td>
+                            </tr>
+                            <tr>
+                                <td>Current Semester GPA</td>
+                                <td><input type="number" step="0.01" id="current-sem-gpa" name="current-sem-gpa" required></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="cgpa-submit-button" type="submit">Calculate CGPA</button>
+                </form>
+            </center>
+        </div>
+        
+        <script src="scripts.js"></script>
+        <script>
+            function toggleSection(section) {
+                const gpa_section = document.getElementById('gpa-calculator');
+                const cgpa_section = document.getElementById('cgpa-calculator');
+                const gpa_link = document.querySelector('.navbar a[href="#gpa-calculator"]');
+                const cgpa_link = document.querySelector('.navbar a[href="#cgpa-calculator"]');
+
+                if (section === 'gpa') {
+                    gpa_section.style.display = 'block';
+                    cgpa_section.style.display = 'none';
+                    gpa_link.classList.add('active');
+                    cgpa_link.classList.remove('active');
+                } else {
+                    gpa_section.style.display = 'none';
+                    cgpa_section.style.display = 'block';
+                    gpa_link.classList.remove('active');
+                    cgpa_link.classList.add('active');
+                }
             }
-        }
 
-        document.addEventListener('DOMContentLoaded', createForm);
-    </script>
-</body>
+            document.addEventListener('DOMContentLoaded', createForm);
+        </script>
+    </body>
 </html>
